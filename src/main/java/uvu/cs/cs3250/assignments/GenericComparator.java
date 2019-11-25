@@ -14,6 +14,13 @@ public interface GenericComparator {
 			}
 		}
 		
+		if(obj1 instanceof Long && obj2 instanceof Long) {		
+			if (((Long) obj1) == ((Long) obj2)){
+				return false;
+			} else {
+				return true;
+			}
+		}
 		
 		//Hint: use instanceof to check the type
 		//      "The type is not supported" Exception will be thrown
