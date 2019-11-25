@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public interface GenericComparator {
 	static <T> boolean isDifferent(T obj1, T obj2) throws Exception {
 		if (obj1 instanceof String && obj2 instanceof String) {
-			String cleanedObj1 = ((String) obj1).replaceAll("^[a-zA-Z]", "");
-			String cleanedObj2 = ((String) obj2).replaceAll("^[a-zA-Z]", "");
+			String cleanedObj1 = ((String) obj1).replaceAll("[^a-zA-Z]", "");
+			String cleanedObj2 = ((String) obj2).replaceAll("[^a-zA-Z]", "");
 
 			return !(cleanedObj1).equals(cleanedObj2);
 		}
