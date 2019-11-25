@@ -10,13 +10,10 @@ public interface GenericComparator {
 
 			return !(cleanedObj1).equals(cleanedObj2);
 		}
-		else if((obj1 instanceof Long && obj2 instanceof Long) ||
-				(obj1 instanceof LocalDate && obj2 instanceof LocalDate)) {
+		else if((obj1 instanceof Long && obj2 instanceof Long) || (obj1 instanceof LocalDate && obj2 instanceof LocalDate)) {
 			return !(obj1).equals(obj2);
 		}
 
-		//Hint: use instanceof to check the type
-		//      "The type is not supported" Exception will be thrown
 		throw new Exception("Uh-oh, these types aren't supported!");
 	}
 }
