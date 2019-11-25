@@ -12,7 +12,7 @@ public interface GenericComparator {
 		}
 		else if((obj1 instanceof Long && obj2 instanceof Long) ||
 				(obj1 instanceof LocalDate && obj2 instanceof LocalDate)) {
-			return false;
+			return !(obj1).equals(obj2);
 		}
 
 		//Hint: use instanceof to check the type
