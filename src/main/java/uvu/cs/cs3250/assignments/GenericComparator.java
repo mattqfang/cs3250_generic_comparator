@@ -1,5 +1,7 @@
 package uvu.cs.cs3250.assignments;
 
+import java.time.LocalDate;
+
 public interface GenericComparator {
 	static <T> boolean isDifferent(T obj1, T obj2) throws Exception {
 		
@@ -22,7 +24,14 @@ public interface GenericComparator {
 			}
 		}
 		
-		//Hint: use instanceof to check the type
+		if(obj1 instanceof LocalDate && obj2 instanceof LocalDate) {		
+			if (((LocalDate) obj1).compareTo((LocalDate) obj2) == 0){
+				return false;
+			} else {
+				return true;
+			}
+		}
+		
 		//      "The type is not supported" Exception will be thrown
 		throw new Exception("Type not supported or type mismatch!");
 	}
